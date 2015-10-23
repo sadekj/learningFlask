@@ -1,0 +1,19 @@
+<!-- This file will be the base of the pages, which means this will have the code that we will need to write in every page, we can write it here once, and tell other pages to copy it from here -->
+<html>
+	<head>
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"><!-- this line is linking the css code with our html code. Notice the href is calculated by flask using the function url_for('static',filename='style.css')-->
+		{% block head %}<!-- here creating a block called head that other pages will fill it with the code they need it -->
+		{% endblock %}<!-- here defining the end of the block -->
+	</head>
+	<body>
+		<h1 class="redesh">This H1 from base.html</h1><!-- this will show on every page that extends base.html -->
+		<a href="{{url_for('index')}}">Index Page</a>
+		<a href="{{url_for('hello')}}">Hello Page</a>
+		<form action="{{url_for('hello')}}" method="POST">
+			<input type="text" name='name' placeholder="Your Name">
+			<input type="submit">
+		</form>
+		{% block content %}<!-- here creating a block called contentthat other pages will fill it with the code they need it -->
+		{% endblock %}<!-- here defining the end of the block -->
+	</body>
+</html>

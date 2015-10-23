@@ -1,0 +1,15 @@
+{% extends "base.html" %} <!-- This line is telling flask to use the code in base.html, and fill in the blocks in base.html with the following code -->
+{% block head %} <!-- This tells flask that where ever it finds block head in base.html fill it with the following line of code -->
+	<title>Hello Page</title>
+{% endblock %}<!-- This line tells flask this is the end of the filling block head -->
+{% block content %} <!-- This tells flask where ever it finds block content in base.html fill it with these lines of code -->
+	<h1>This H1 from hello.html</h1>
+	{% if name %} <!-- This how you make an if statement in flask, and this asks if the name variable has a value then do the next line -->
+	  <h1 class="redesh">Hello {{ name }}!</h1> <!-- {{name}} this means print the value of the variable name-->
+	{% else %} <!-- else means the name variable has no value then do the next line -->
+	  <h1>Hello World!</h1>
+	{% endif %} <!-- This telling flask this is the end of the if else statement and that the next line is not inside the if statement -->
+	{%for x in range(0,5)%} <!-- this is how to make a for loop in flask in html. Notice it is very similar to python -->
+		<h3 class="bluesh"> Loop number {{x}} </h3> <!-- This will run loop times (in this case 5 times) and will print Loop number value of x -->
+	{% endfor %} <!-- Here telling flask this is the end of the for loop, and the next line is not included-->
+{% endblock %}<!-- this is telling flask that this is the end of filling block content in base.html -->

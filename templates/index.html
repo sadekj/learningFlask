@@ -1,0 +1,7 @@
+{% extends "base.html" %}<!-- This line is telling flask to use the code in base.html, and fill in the blocks in base.html with the following code -->
+{% block head %}<!-- This tells flask that where ever it finds block head in base.html fill it with the following line of code -->
+	<title>Index page</title>
+{% endblock %}<!-- This line tells flask this is the end of the filling block head -->
+{% block content%}<!-- This tells flask where ever it finds block content in base.html fill it with these lines of code -->
+	<h1 class="greenesh">This H1 from index.html </h1>
+{% endblock %}<!-- this is telling flask that this is the end of filling block content in base.html -->
